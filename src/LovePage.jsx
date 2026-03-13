@@ -1,14 +1,14 @@
 import React, { useMemo, useState } from 'react';
 import HeartCatchGame from './HeartCatchGame';
-import MemoriesGallery from './MemoriesGallery';
 import ProposalPage from './ProposalPage';
+import RideMeGame from './RideMeGame';
 
 export default function LovePage() {
   const [showLoveNote, setShowLoveNote] = useState(false);
   const [infoMessage, setInfoMessage] = useState('');
   const [showNextHeart, setShowNextHeart] = useState(false);
   const [showGame, setShowGame] = useState(false);
-  const [showMemories, setShowMemories] = useState(false);
+  const [showRideGame, setShowRideGame] = useState(false);
   const [showProposal, setShowProposal] = useState(false);
 
   const hearts = useMemo(
@@ -51,11 +51,6 @@ export default function LovePage() {
   const handleLoveGame = () => {
     setShowLoveNote(false);
     setShowGame(true);
-  };
-
-  const handleMemories = () => {
-    setShowLoveNote(false);
-    setShowMemories(true);
   };
 
   const closeModal = () => {
@@ -123,8 +118,8 @@ export default function LovePage() {
           <button className="love-card love-button" onClick={handleLoveGame}>
             LOVE GAME
           </button>
-          <button className="love-card love-button" onClick={handleMemories}>
-            MEMORIES
+          <button className="love-card love-button" onClick={() => setShowRideGame(true)}>
+            RIDE ME 🚗
           </button>
         </div>
 
@@ -192,8 +187,8 @@ Summa sonna epadi adha chinnadha oru web app create panna 🤭</p>
           <HeartCatchGame onClose={() => setShowGame(false)} />
         )}
 
-        {showMemories && (
-          <MemoriesGallery onClose={() => setShowMemories(false)} />
+        {showRideGame && (
+          <RideMeGame onClose={() => setShowRideGame(false)} />
         )}
 
         {showProposal && (

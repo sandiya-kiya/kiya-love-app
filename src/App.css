@@ -3444,3 +3444,371 @@ body, html, #root {
     opacity: 0;
   }
 }
+
+
+/* Love Ending Page Styles */
+.love-ending-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    #ff008c 0%,
+    #7a007a 45%,
+    #2a003f 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+  animation: cinematicFade 2s ease;
+}
+
+@keyframes cinematicFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.love-ending-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 22px;
+  animation: floatHearts 12s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100vh) scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.love-ending-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    0 0 8px hotpink,
+    0 0 20px violet;
+  animation: sparkleBlink 2s infinite;
+}
+
+@keyframes sparkleBlink {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.love-ending-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+}
+
+.love-ending-message {
+  font-size: 34px;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  line-height: 1.6;
+  text-shadow:
+    0 0 20px hotpink,
+    0 0 40px deeppink,
+    0 0 60px violet;
+  animation: loveGlow 3s infinite alternate;
+}
+
+@keyframes loveGlow {
+  from {
+    text-shadow:
+      0 0 20px hotpink,
+      0 0 40px deeppink,
+      0 0 60px violet;
+  }
+  to {
+    text-shadow:
+      0 0 30px hotpink,
+      0 0 60px deeppink,
+      0 0 90px violet;
+  }
+}
+
+.big-love-heart {
+  font-size: 90px;
+  margin-top: 30px;
+  animation: heartBeat 1.3s infinite;
+  filter: drop-shadow(0 0 25px hotpink);
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.final-love-line {
+  margin-top: 20px;
+  font-size: 26px;
+  color: #ffd6f3;
+  text-shadow:
+    0 0 15px hotpink,
+    0 0 35px violet;
+  animation: romanticPulse 2s infinite alternate;
+}
+
+@keyframes romanticPulse {
+  from {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+
+.love-ending-petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.rose-petal {
+  position: absolute;
+  top: -50px;
+  font-size: 22px;
+  opacity: 0.9;
+  animation: fallPetal linear infinite;
+}
+
+@keyframes fallPetal {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.love-ending-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.magic-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: white;
+  box-shadow:
+    0 0 10px hotpink,
+    0 0 20px violet,
+    0 0 40px deeppink;
+  animation: magicFloat 6s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+@keyframes magicFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+/* Ride Me Game Styles */
+.ride-game-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    #ff008c 0%,
+    #7a007a 45%,
+    #2a003f 100%
+  );
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 999;
+}
+
+.ride-score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow:
+    0 0 10px hotpink,
+    0 0 20px deeppink;
+  z-index: 10;
+}
+
+.ride-message {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffd6f3;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow:
+    0 0 8px hotpink,
+    0 0 16px deeppink;
+  animation: messageFade 2s ease-out;
+  z-index: 10;
+}
+
+@keyframes messageFade {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
+.love-car {
+  position: absolute;
+  bottom: 40px;
+  font-size: 55px;
+  transition: left 0.15s ease;
+  z-index: 5;
+}
+
+.falling-heart {
+  position: absolute;
+  font-size: 26px;
+  filter:
+    drop-shadow(0 0 6px hotpink)
+    drop-shadow(0 0 15px deeppink);
+  animation: heartFall linear infinite;
+  z-index: 3;
+}
+
+@keyframes heartFall {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.ride-win-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 20;
+  background: rgba(255, 20, 147, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow:
+    0 0 30px hotpink,
+    0 0 60px deeppink;
+  border: 2px solid rgba(255, 182, 193, 0.5);
+}
+
+.win-heart {
+  font-size: 60px;
+  animation: heartPulse 1.5s infinite;
+}
+
+.ride-win-message h2 {
+  margin: 20px 0 10px 0;
+  font-size: 28px;
+  text-shadow:
+    0 0 15px hotpink,
+    0 0 30px deeppink;
+}
+
+.ride-win-message p {
+  margin: 10px 0 20px 0;
+  font-size: 18px;
+}
+
+.ride-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 20, 147, 0.8);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow:
+    0 0 15px hotpink,
+    0 0 30px deeppink;
+  transition: all 0.3s ease;
+  z-index: 15;
+}
+
+.ride-close-btn:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 25px hotpink,
+    0 0 50px deeppink;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

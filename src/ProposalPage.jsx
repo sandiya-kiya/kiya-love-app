@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from 'react';
+import LoveEndingPage from './LoveEndingPage';
 
 export default function ProposalPage({ onClose }) {
   const [yesCelebration, setYesCelebration] = useState(false);
   const [noAttempts, setNoAttempts] = useState(0);
   const [noPosition, setNoPosition] = useState({ x: '120px', y: '0px' });
+  const [showYesPage, setShowYesPage] = useState(false);
 
   const hearts = useMemo(
     () =>
@@ -27,7 +29,7 @@ export default function ProposalPage({ onClose }) {
   const currentMessage = messages[Math.min(noAttempts, messages.length - 1)];
 
   const handleYes = () => {
-    setYesCelebration(true);
+    setShowYesPage(true);
   };
 
   const handleNoHover = () => {
@@ -85,19 +87,11 @@ export default function ProposalPage({ onClose }) {
           </button>
         </div>
 
-        {noAttempts > 0 && !yesCelebration && (
+        {noAttempts > 0 && !showYesPage && (
           <p className="proposal-no-message">{currentMessage}</p>
         )}
 
-        {yesCelebration && (
-          <div className="proposal-yes-message">
-            <h2>Yayyyyy 💖</h2>
-            <p>You made me the happiest person in the world!</p>
-            <button className="heart-game-back" onClick={onClose}>
-              Back to Love Page
-            </button>
-          </div>
-        )}
+        {showYesPage && <LoveEndingPage />}
       </div>
     </div>
   );
